@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Balloon</title>
+    <link rel="stylesheet" href="/src/style.css">
+  </head>
+  <body>
+    <div class="bang-image hidden"></div>
+    <script type="text/javascript">
+      window.item = 'balloon';
+
+      document.addEventListener('click', () => {
+        window.resizeBy(-100, -100);
+      });
+
+      document.body.style.backgroundColor = getRandomColor();
+
+      function getRandomColor() {
+        const characters = "0123456789ABCDEF";
+        let color = '#';
+        for (var i = 0; i < 6; i++) {
+          color += characters[getRandomNumber(0, 15)];
+        }
+        return color;
+      }
+
+      function getRandomNumber(low, high) {
+        var r = Math.floor(Math.random() * (high - low + 1)) + low;
+        return r;
+      }
+    </script>
+    <script src="/src/index.js" charset="utf-8" async></script>
+  </body>
+</html>
